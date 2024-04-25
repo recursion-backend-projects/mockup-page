@@ -1,0 +1,427 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 以下は、開発用コード -->
+    <!-- メインのリポジトリでは、使用しないでください。 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+    <title>ホーム</title>
+</head>
+<body class="bg-gray-100">
+
+    <header class="antialiased">
+        <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+            <div class="flex flex-wrap justify-between items-center">
+                <div class="flex justify-start items-center">
+
+                    <!-- アプリケーション名とロゴ -->
+                    <a href="#" class="flex mr-4">
+                        <!-- ロゴは、後で作成するか。。。 -->
+                        <img src="https://flowbite.s3.amazonaws.com/logo.svg" class="mr-3 h-8" alt="FlowBite Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">E-Commerce</span>
+                    </a>
+
+                    <!-- 検索欄 -->
+                    <form action="#" method="GET" class="hidden lg:block lg:pl-2">
+                        <label for="topbar-search" class="sr-only">キーワードを検索</label>
+                        <div class="relative mt-1 lg:w-96">
+                            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/> </svg>
+                            </div>
+                            <input type="text" name="email" id="topbar-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-9 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="キーワードを検索">
+                        </div>
+                    </form>
+                </div>
+                <div class="flex items-center lg:order-2">
+                    <button id="toggleSidebarMobileSearch" type="button" class="p-2 rounded-lg lg:hidden text-gray-800 hover:text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">
+                        <span class="sr-only">キーワードを検索</span>
+                        <!-- 検索アイコン -->
+                        <svg class="w-4 h-4" data-tooltip-target="search-tooltip" data-tooltip-placement="bottom"  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+
+                        <div id="search-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            キーワードを検索
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                    </button>
+
+                    <a href="#" data-tooltip-target="cart-tooltip" data-tooltip-placement="bottom" data-dropdown-toggle="menuDropdown" aria-expanded="true" aria-controls="sidebar" class="p-2 ml-1 lg:ml-3 text-gray-600 rounded cursor-pointer lg:inline hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700">
+                        <div class="flex">
+                            <!-- カートアイコン -->
+                            <svg class="w-6 h-6 text-gray-800 hover:text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                            </svg>
+                            <!-- カートに入ってる商品数(実際の値は、ユーザーがカートに入れた商品数で変化する) -->
+                            <span class="text-orange-500 font-bold">+26</span>
+                        </div>
+
+                        <div id="cart-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            カートリスト
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                    </a>
+
+                    <!-- メニュー -->
+                    <button data-tooltip-target="menu-tooltip" data-tooltip-placement="bottom" data-dropdown-toggle="menuDropdown" aria-expanded="true" aria-controls="sidebar" class="p-2 ml-1 lg:ml-3 rounded cursor-pointer lg:inline text-gray-800 hover:text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h14M1 6h14M1 11h14M1"/> </svg>
+
+                        <div id="menu-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            メニュー
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                    </button>
+                    <div id="menuDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <ul class="py-1 text-sm text-gray-800 dark:text-gray-200" aria-labelledby="menuDropdownButton">
+                            <li>
+                                <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ホーム</a>
+                            </li>
+                            <!-- ゲストユーザーの場合 -->
+                            <li>
+                                <p data-tooltip-target="wishlist-tooltip" data-tooltip-placement="left" class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400">ウィッシュリスト</p>
+
+                                <div id="wishlist-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                    ログインすると、ウィッシュリストを利用できます
+                                    <div class="tooltip-arrow" data-popper-arrow></div>
+                                </div>
+                            </li>
+                            <li>
+                                <p data-tooltip-target="favorite-tooltip" data-tooltip-placement="left" class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400">お気に入り</p>
+
+                                <div id="favorite-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                    ログインすると、お気に入りを利用できます
+                                    <div class="tooltip-arrow" data-popper-arrow></div>
+                                </div>
+                            </li>
+                            <li>
+                                <p data-tooltip-target="chatlist-tooltip" data-tooltip-placement="left" class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400">チャットリスト</p>
+
+                                <div id="chatlist-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                    ログインすると、チャットリストを利用できます
+                                    <div class="tooltip-arrow" data-popper-arrow></div>
+                                </div>
+                            </li>
+                            <li>
+                                <p data-tooltip-target="purchase-history-tooltip" data-tooltip-placement="left" class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400">購入履歴</p>
+
+                                <div id="purchase-history-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                    ログインすると、購入履歴を利用できます
+                                    <div class="tooltip-arrow" data-popper-arrow></div>
+                                </div>
+                            </li>
+                            <li>
+                                <p href="#" data-tooltip-target="account-info-tooltip" data-tooltip-placement="left" class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400">アカウント情報</p>
+
+                                <div id="account-info-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                    ログインすると、アカウント情報を利用できます
+                                    <div class="tooltip-arrow" data-popper-arrow></div>
+                                </div>
+                            </li>
+
+                            <!-- ログインユーザーの場合 -->                            
+                            <!-- <li>
+                                <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ウィッシュリスト</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">お気に入り</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">チャットリスト</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">購入履歴</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">アカウント情報</a>
+                            </li> -->
+                        </ul>
+                        <div class="py-1">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="menuDropdownButton">
+                                <!-- ゲストユーザーの場合 -->
+                                <li>
+                                    <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">アカウント作成</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ログイン</a>
+                                </li>
+
+                                <!-- ログインユーザーの場合 -->
+                                <!-- <li>
+                                    <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ログアウト</a>
+                                </li> -->
+                            </ul>
+                        </div>
+                        
+                        <div class="py-1">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="menuDropdownButton">
+                                <li>
+                                    <p class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">カテゴリー</p>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">絵画</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">彫刻</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">写真</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">イラスト</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+  
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 pt-4 pb-1">
+                <!-- デフォルトアバターアイコン -->
+                <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                    <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                </div>
+
+                <div class="font-medium dark:text-white">
+                    <!-- ゲストユーザーの場合 -->
+                    <div>ゲストユーザー</div>
+                    <!-- ログインユーザーの場合 -->
+                    <!-- <div>UserAさん</div> -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- トップ画像 -->
+    <div class="antialiased flex justify-center flex-col items-center py-10">
+        <div class="flex justify-center place-content-center py-10 w-full lg:w-3/4 min-h-[32vh] lg:min-h-[70vh] bg-[url('/src/public/assets/home.jpg')] bg-center bg-cover shadow-2xl">
+            <div class="container px-5 place-self-center flex place-content-center">
+                <h1 class="text-3xl lg:text-6xl font-bold text-white">
+                    ここでしか出会えない<br>アートを見つけよう
+                </h1>
+            </div>
+        </div>
+
+        <div class="grid gap-4 w-full lg:w-1/2 mx-auto mt-40 p-6 bg-gray-200 border rounded-2xl">
+            <p class="text-2xl lg:text-4xl font-bold text-center">ギャラリーへ足を踏み入れよう</p>
+            <p class="text-lg lg:text-xl text-center text-gray-500">カテゴリーから探す</p>
+
+            <!-- 絵画のギャラリー -->
+            <div class="flex justify-between pt-10">
+                <h3 class="text-xl lg:text-2xl ml-4">絵画</h3>
+                <div class="flex items-end">
+                    <a href="#" class="lg:text-lg text-sky-500 mr-4">もっと見る</a>
+                </div>
+            </div>
+
+            <div id="painting-carousel" class="relative w-full" data-carousel="static">
+                <!-- カルーセルラッパー -->
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                     <!-- アイテム1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/painting1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                        <img src="/src/public/assets/painting2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/painting3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/painting4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/painting5.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                </div>
+                <!-- スライダーコントロール -->
+                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">前へ</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">次へ</span>
+                    </span>
+                </button>
+            </div>
+
+            <!-- 彫刻のギャラリー -->
+            <div class="flex justify-between pt-20">
+                <h3 class="text-xl lg:text-2xl ml-4">彫刻</h3>
+                <div class="flex items-end">
+                    <a href="#" class="lg:text-lg text-sky-500 mr-4">もっと見る</a>
+                </div>
+            </div>
+
+            <div id="sculpture-carousel" class="relative w-full" data-carousel="static">
+                <!-- カルーセルラッパー -->
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                     <!-- アイテム1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/sculpture1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                        <img src="/src/public/assets/sculpture2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/sculpture3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/sculpture4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/sculpture5.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                </div>
+                <!-- スライダーコントロール -->
+                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">前へ</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">次へ</span>
+                    </span>
+                </button>
+            </div>
+
+            <!-- 写真のギャラリー -->
+            <div class="flex justify-between pt-20">
+                <h3 class="text-xl lg:text-2xl ml-4">写真</h3>
+                <div class="flex items-end">
+                    <a href="#" class="lg:text-lg text-sky-500 mr-4">もっと見る</a>
+                </div>
+            </div>
+
+            <div id="photography-carousel" class="relative w-full" data-carousel="static">
+                <!-- カルーセルラッパー -->
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                     <!-- アイテム1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/photography1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                        <img src="/src/public/assets/photography2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/photography3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/photography4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/photography5.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                </div>
+                <!-- スライダーコントロール -->
+                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">前へ</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">次へ</span>
+                    </span>
+                </button>
+            </div>
+
+            <!-- イラストのギャラリー -->
+            <div class="flex justify-between pt-20">
+                <h3 class="text-xl lg:text-2xl ml-4">イラスト</h3>
+                <div class="flex items-end">
+                    <a href="#" class="lg:text-lg text-sky-500 mr-4">もっと見る</a>
+                </div>
+            </div>
+
+            <div id="illustration-carousel" class="relative w-full" data-carousel="static">
+                <!-- カルーセルラッパー -->
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                     <!-- アイテム1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/illustration1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                        <img src="/src/public/assets/illustration2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/illustration3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/illustration4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                     <!-- アイテム5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/src/public/assets/illustration5.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    </div>
+                </div>
+                <!-- スライダーコントロール -->
+                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">前へ</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">次へ</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center p-3 text-gray-500">
+        <p>© 2024 E-Commerce</p>
+    </footer>
+
+    <!-- 以下は、開発用コード -->
+    <!-- メインのリポジトリでは、使用しないでください。 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+</html>
