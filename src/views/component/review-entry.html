@@ -1,133 +1,301 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- 以下は、開発用コード -->
     <!-- メインのリポジトリでは、使用しないでください。 -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
 
     <title>レビュー記入</title>
-</head>
-<body class="bg-gray-100">
-
+  </head>
+  <body class="bg-gray-100">
     <header class="antialiased">
-        <nav class="bg-white border-gray-200 px-4 md:px-6 py-2.5 dark:bg-gray-800">
-            <div class="flex flex-wrap justify-between items-center">
-                <div class="flex justify-start items-center">
+      <nav
+        class="border-gray-200 bg-white px-4 py-2.5 md:px-6 dark:bg-gray-800"
+      >
+        <div class="flex flex-wrap items-center justify-between">
+          <div class="flex items-center justify-start">
+            <!-- アプリケーション名とロゴ -->
+            <a href="#" class="mr-4 flex">
+              <!-- ロゴは、後で作成するか。。。 -->
+              <img
+                src="https://flowbite.s3.amazonaws.com/logo.svg"
+                class="mr-3 h-8"
+                alt="FlowBite Logo"
+              />
+              <span
+                class="self-center whitespace-nowrap text-2xl font-semibold dark:text-white"
+                >Art-SA2</span
+              >
+            </a>
 
-                    <!-- アプリケーション名とロゴ -->
-                    <a href="#" class="flex mr-4">
-                        <!-- ロゴは、後で作成するか。。。 -->
-                        <img src="https://flowbite.s3.amazonaws.com/logo.svg" class="mr-3 h-8" alt="FlowBite Logo" />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">E-Commerce</span>
-                    </a>
-
-                    <!-- 検索欄 -->
-                    <form action="#" method="GET" class="hidden md:block md:pl-2">
-                        <label for="topbar-search" class="sr-only">キーワードを検索</label>
-                        <div class="relative mt-1 md:w-96">
-                            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/> </svg>
-                            </div>
-                            <input type="text" name="title" id="topbar-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-9 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="キーワードを検索">
-                        </div>
-                    </form>
+            <!-- 検索欄 -->
+            <form action="#" method="GET" class="hidden md:block md:pl-2">
+              <label for="topbar-search" class="sr-only"
+                >キーワードを検索</label
+              >
+              <div class="relative mt-1 md:w-96">
+                <div
+                  class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+                >
+                  <svg
+                    class="h-4 w-4 text-gray-500 dark:text-gray-400"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                    />
+                  </svg>
                 </div>
-                <div class="flex items-center md:order-2">
-                    <!-- レスポンシブ対応 モバイル画面サイズ時の検索欄 -->
-                    <button id="toggleSidebarMobileSearch" type="button" class="p-2 rounded-lg md:hidden text-gray-800 hover:text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">
-                        <span class="sr-only">キーワードを検索</span>
-                        <!-- 検索アイコン -->
-                        <svg class="w-4 h-4" data-tooltip-target="search-tooltip" data-tooltip-placement="bottom"  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                        </svg>
+                <input
+                  type="text"
+                  name="title"
+                  id="topbar-search"
+                  class="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-9 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+                  placeholder="キーワードを検索"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="flex items-center md:order-2">
+            <!-- レスポンシブ対応 モバイル画面サイズ時の検索欄 -->
+            <button
+              id="toggleSidebarMobileSearch"
+              type="button"
+              class="rounded-lg p-2 text-gray-800 hover:bg-gray-100 hover:text-gray-900 md:hidden dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+            >
+              <span class="sr-only">キーワードを検索</span>
+              <!-- 検索アイコン -->
+              <svg
+                class="h-4 w-4"
+                data-tooltip-target="search-tooltip"
+                data-tooltip-placement="bottom"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
 
-                        <div id="search-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                            キーワードを検索
-                            <div class="tooltip-arrow" data-popper-arrow></div>
-                        </div>
-                    </button>
+              <div
+                id="search-tooltip"
+                role="tooltip"
+                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm dark:bg-gray-700"
+              >
+                キーワードを検索
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </button>
 
-                    <!-- カートボタン -->
-                    <a href="#" data-tooltip-target="cart-tooltip" data-tooltip-placement="bottom" data-dropdown-toggle="menuDropdown" aria-expanded="true" aria-controls="sidebar" class="p-2 ml-1 md:ml-3 text-gray-600 rounded cursor-pointer md:inline hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700">
-                        <div class="flex">
-                            <!-- カートアイコン -->
-                            <svg class="w-6 h-6 text-gray-800 hover:text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
-                            </svg>
-                            <!-- カートに入ってる商品数(実際の値は、ユーザーがカートに入れた商品数で変化する) -->
-                            <span class="text-orange-500 font-bold">+26</span>
-                        </div>
+            <!-- カートボタン -->
+            <a
+              href="#"
+              data-tooltip-target="cart-tooltip"
+              data-tooltip-placement="bottom"
+              data-dropdown-toggle="menuDropdown"
+              aria-expanded="true"
+              aria-controls="sidebar"
+              class="ml-1 cursor-pointer rounded p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 md:ml-3 md:inline dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            >
+              <div class="flex">
+                <!-- カートアイコン -->
+                <svg
+                  class="h-6 w-6 text-gray-800 hover:bg-gray-100 hover:text-gray-900 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+                  />
+                </svg>
+                <!-- カートに入ってる商品数(実際の値は、ユーザーがカートに入れた商品数で変化する) -->
+                <span class="font-bold text-orange-500">+26</span>
+              </div>
 
-                        <div id="cart-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                            カートリスト
-                            <div class="tooltip-arrow" data-popper-arrow></div>
-                        </div>
-                    </a>
+              <div
+                id="cart-tooltip"
+                role="tooltip"
+                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm dark:bg-gray-700"
+              >
+                カートリスト
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </a>
 
-                    <!-- メニューボタン -->
-                    <button data-tooltip-target="menu-tooltip" data-tooltip-placement="bottom" data-dropdown-toggle="menuDropdown" aria-expanded="true" aria-controls="sidebar" class="p-2 ml-1 md:ml-3 rounded cursor-pointer md:inline text-gray-800 hover:text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white">
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h14M1 6h14M1 11h14M1"/> </svg>
+            <!-- メニューボタン -->
+            <button
+              data-tooltip-target="menu-tooltip"
+              data-tooltip-placement="bottom"
+              data-dropdown-toggle="menuDropdown"
+              aria-expanded="true"
+              aria-controls="sidebar"
+              class="ml-1 cursor-pointer rounded p-2 text-gray-800 hover:bg-gray-100 hover:text-gray-900 md:ml-3 md:inline dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+            >
+              <svg
+                class="h-5 w-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 16 12"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h14M1 6h14M1 11h14M1"
+                />
+              </svg>
 
-                        <div id="menu-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                            メニュー
-                            <div class="tooltip-arrow" data-popper-arrow></div>
-                        </div>
-                    </button>
+              <div
+                id="menu-tooltip"
+                role="tooltip"
+                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm dark:bg-gray-700"
+              >
+                メニュー
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </button>
 
-                    <!-- メニューのドロップダウンリスト -->
-                    <div id="menuDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                        <ul class="py-1 text-sm text-gray-800 dark:text-gray-200" aria-labelledby="menuDropdownButton">
-                            <li>
-                                <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ホーム</a>
-                            </li>
-                            <!-- ゲストユーザーの場合 -->
-                            <li>
-                                <p data-tooltip-target="wishlist-tooltip" data-tooltip-placement="left" class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400">ウィッシュリスト</p>
+            <!-- メニューのドロップダウンリスト -->
+            <div
+              id="menuDropdown"
+              class="z-10 hidden w-44 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
+            >
+              <ul
+                class="py-1 text-sm text-gray-800 dark:text-gray-200"
+                aria-labelledby="menuDropdownButton"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >ホーム</a
+                  >
+                </li>
+                <!-- ゲストユーザーの場合 -->
+                <li>
+                  <p
+                    data-tooltip-target="wishlist-tooltip"
+                    data-tooltip-placement="left"
+                    class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400"
+                  >
+                    ウィッシュリスト
+                  </p>
 
-                                <div id="wishlist-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                                    ログインすると、ウィッシュリストを利用できます
-                                    <div class="tooltip-arrow" data-popper-arrow></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p data-tooltip-target="favorite-tooltip" data-tooltip-placement="left" class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400">お気に入り</p>
+                  <div
+                    id="wishlist-tooltip"
+                    role="tooltip"
+                    class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm dark:bg-gray-700"
+                  >
+                    ログインすると、ウィッシュリストを利用できます
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                  </div>
+                </li>
+                <li>
+                  <p
+                    data-tooltip-target="favorite-tooltip"
+                    data-tooltip-placement="left"
+                    class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400"
+                  >
+                    お気に入り
+                  </p>
 
-                                <div id="favorite-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                                    ログインすると、お気に入りを利用できます
-                                    <div class="tooltip-arrow" data-popper-arrow></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p data-tooltip-target="chatlist-tooltip" data-tooltip-placement="left" class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400">チャットリスト</p>
+                  <div
+                    id="favorite-tooltip"
+                    role="tooltip"
+                    class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm dark:bg-gray-700"
+                  >
+                    ログインすると、お気に入りを利用できます
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                  </div>
+                </li>
+                <li>
+                  <p
+                    data-tooltip-target="chatlist-tooltip"
+                    data-tooltip-placement="left"
+                    class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400"
+                  >
+                    チャットリスト
+                  </p>
 
-                                <div id="chatlist-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                                    ログインすると、チャットリストを利用できます
-                                    <div class="tooltip-arrow" data-popper-arrow></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p data-tooltip-target="purchase-history-tooltip" data-tooltip-placement="left" class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400">購入履歴</p>
+                  <div
+                    id="chatlist-tooltip"
+                    role="tooltip"
+                    class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm dark:bg-gray-700"
+                  >
+                    ログインすると、チャットリストを利用できます
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                  </div>
+                </li>
+                <li>
+                  <p
+                    data-tooltip-target="purchase-history-tooltip"
+                    data-tooltip-placement="left"
+                    class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400"
+                  >
+                    購入履歴
+                  </p>
 
-                                <div id="purchase-history-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                                    ログインすると、購入履歴を利用できます
-                                    <div class="tooltip-arrow" data-popper-arrow></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p href="#" data-tooltip-target="account-info-tooltip" data-tooltip-placement="left" class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400">アカウント情報</p>
+                  <div
+                    id="purchase-history-tooltip"
+                    role="tooltip"
+                    class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm dark:bg-gray-700"
+                  >
+                    ログインすると、購入履歴を利用できます
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                  </div>
+                </li>
+                <li>
+                  <p
+                    href="#"
+                    data-tooltip-target="account-info-tooltip"
+                    data-tooltip-placement="left"
+                    class="block px-4 py-2 font-bold text-gray-300 dark:text-gray-400"
+                  >
+                    アカウント情報
+                  </p>
 
-                                <div id="account-info-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                                    ログインすると、アカウント情報を利用できます
-                                    <div class="tooltip-arrow" data-popper-arrow></div>
-                                </div>
-                            </li>
+                  <div
+                    id="account-info-tooltip"
+                    role="tooltip"
+                    class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm dark:bg-gray-700"
+                  >
+                    ログインすると、アカウント情報を利用できます
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                  </div>
+                </li>
 
-                            <!-- ログインユーザーの場合 -->                            
-                            <!-- <li>
+                <!-- ログインユーザーの場合 -->
+                <!-- <li>
                                 <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ウィッシュリスト</a>
                             </li>
                             <li>
@@ -142,123 +310,208 @@
                             <li>
                                 <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">アカウント情報</a>
                             </li> -->
-                        </ul>
-                        <div class="py-1">
-                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="menuDropdownButton">
-                                <!-- ゲストユーザーの場合 -->
-                                <li>
-                                    <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">アカウント作成</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ログイン</a>
-                                </li>
+              </ul>
+              <div class="py-1">
+                <ul
+                  class="py-1 text-sm text-gray-700 dark:text-gray-200"
+                  aria-labelledby="menuDropdownButton"
+                >
+                  <!-- ゲストユーザーの場合 -->
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >アカウント作成</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >ログイン</a
+                    >
+                  </li>
 
-                                <!-- ログインユーザーの場合 -->
-                                <!-- <li>
+                  <!-- ログインユーザーの場合 -->
+                  <!-- <li>
                                     <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ログアウト</a>
                                 </li> -->
-                            </ul>
-                        </div>
-                        
-                        <div class="py-1">
-                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="menuDropdownButton">
-                                <li>
-                                    <p class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">カテゴリー</p>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">絵画</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">彫刻</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">写真</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">イラスト</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-  
-                </div>
-            </div>
+                </ul>
+              </div>
 
-            <!-- ログインしているアカウント名(ログインしていない場合は、ゲストユーザー) -->
-            <div class="flex items-center gap-4 pt-4 pb-1">
-                <!-- デフォルトアバターアイコン -->
-                <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-                    <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
-                </div>
-
-                <div class="font-medium dark:text-white">
-                    <!-- ゲストユーザーの場合 -->
-                    <div>ゲストユーザー</div>
-                    <!-- ログインユーザーの場合 -->
-                    <!-- <div>UserAさん</div> -->
-                </div>
+              <div class="py-1">
+                <ul
+                  class="py-1 text-sm text-gray-700 dark:text-gray-200"
+                  aria-labelledby="menuDropdownButton"
+                >
+                  <li>
+                    <p
+                      class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      カテゴリー
+                    </p>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >絵画</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >彫刻</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >写真</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >イラスト</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
-        </nav>
+          </div>
+        </div>
+
+        <!-- ログインしているアカウント名(ログインしていない場合は、ゲストユーザー) -->
+        <div class="flex items-center gap-4 pb-1 pt-4">
+          <!-- デフォルトアバターアイコン -->
+          <div
+            class="relative h-8 w-8 overflow-hidden rounded-full bg-gray-100 dark:bg-gray-600"
+          >
+            <svg
+              class="absolute -left-1 h-12 w-12 text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+
+          <div class="font-medium dark:text-white">
+            <!-- ゲストユーザーの場合 -->
+            <div>ゲストユーザー</div>
+            <!-- ログインユーザーの場合 -->
+            <!-- <div>UserAさん</div> -->
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!-- 作品詳細 -->
-    <div class="antialiased flex flex-col items-center pt-10 divide-y-2 divide-gray-300">
-        <div class="flex flex-col md:flex-row w-full md:w-2/3 justify-center items-center md:items-start pb-10">
-            <!-- 作品画像 -->
-            <img src="/src/public/assets/painting2.jpg" class="block w-2/3 md:w-1/3 rounded-lg shadow-xl" alt="">
-            <!-- 作品情報 -->
-            <div class="px-12 w-full md:w-1/3">
-                <a href="#">
-                    <h1 class="text-2xl md:text-3xl pt-4 md:pt-0 md:pb-4 text-sky-500">絵画02</h1>
-                </a>
-                <p class="text-lg py-1 md:py-2">作者 : エミリオ・ヴァレンティ</p>
-                <p class="text-lg py-1 md:py-2">リリース日 : 2021年4月25日</p>
-                <!-- 星評価を★と☆で表現する -->
-                <p class="text-lg md:text-xl font-bold text-orange-500">総合評価 : ★★★★★</p>
-            </div>
+    <div
+      class="flex flex-col items-center divide-y-2 divide-gray-300 pt-10 antialiased"
+    >
+      <div
+        class="flex w-full flex-col items-center justify-center pb-10 md:w-2/3 md:flex-row md:items-start"
+      >
+        <!-- 作品画像 -->
+        <img
+          src="/src/public/assets/painting2.jpg"
+          class="block w-2/3 rounded-lg shadow-xl md:w-1/3"
+          alt=""
+        />
+        <!-- 作品情報 -->
+        <div class="w-full px-12 md:w-1/3">
+          <a href="#">
+            <h1 class="pt-4 text-2xl text-sky-500 md:pb-4 md:pt-0 md:text-3xl">
+              絵画02
+            </h1>
+          </a>
+          <p class="py-1 text-lg md:py-2">作者 : エミリオ・ヴァレンティ</p>
+          <p class="py-1 text-lg md:py-2">リリース日 : 2021年4月25日</p>
+          <!-- 星評価を★と☆で表現する -->
+          <p class="text-lg font-bold text-orange-500 md:text-xl">
+            総合評価 : ★★★★★
+          </p>
         </div>
+      </div>
 
-        <!-- レビュー記入フォーム -->
-        <div class="flex flex-col w-full md:w-1/3 py-4">
-            <div class="container justify-center items-center space-y-4 px-6 md:pl-0">
-                <h2 class="text-xl md:text-2xl text-center">レビューを書く</h2>
-                <p class="text-md md:text-lg text-center text-gray-500">購入した作品への思いを投稿しよう</p>
+      <!-- レビュー記入フォーム -->
+      <div class="flex w-full flex-col py-4 md:w-1/3">
+        <div
+          class="container items-center justify-center space-y-4 px-6 md:pl-0"
+        >
+          <h2 class="text-center text-xl md:text-2xl">レビューを書く</h2>
+          <p class="text-md text-center text-gray-500 md:text-lg">
+            購入した作品への思いを投稿しよう
+          </p>
 
-                <form action="#" method="post" class="bg-white shadow-xl p-4 border border-gray-200 rounded-xl space-y-4">
-                    <div>
-                        <label for="title">タイトル</label>
-                        <input type="text" name="title" class="w-full p-2 border border-gray-300 rounded">
-                    </div>
-                    <div>
-                        <label for="comment">コメント</label>
-                        <textarea name="comment" rows="4" class="w-full p-2 border border-gray-300 rounded"></textarea>
-                    </div>
-                    <div>
-                        <label for="star-rate-select" class="block text-lg text-gray-900 ml-1">評価</label>
-                        <select id="star-rate-select" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block ml-2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option disabled selected>評価してください</option>
-                            <option value="5">5</option>
-                            <option value="4">4</option>
-                            <option value="3">3</option>
-                            <option value="2">2</option>
-                            <option value="1">1</option>
-                        </select>        
-                    </div>
-                    <div>
-                        <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 py-2 my-2 w-full rounded">投稿する</button>
-                    </div>
-                </form>
+          <form
+            action="#"
+            method="post"
+            class="space-y-4 rounded-xl border border-gray-200 bg-white p-4 shadow-xl"
+          >
+            <div>
+              <label for="title">タイトル</label>
+              <input
+                type="text"
+                name="title"
+                class="w-full rounded border border-gray-300 p-2"
+              />
             </div>
+            <div>
+              <label for="comment">コメント</label>
+              <textarea
+                name="comment"
+                rows="4"
+                class="w-full rounded border border-gray-300 p-2"
+              ></textarea>
+            </div>
+            <div>
+              <label
+                for="star-rate-select"
+                class="ml-1 block text-lg text-gray-900"
+                >評価</label
+              >
+              <select
+                id="star-rate-select"
+                class="ml-2 block rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+              >
+                <option disabled selected>評価してください</option>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+              </select>
+            </div>
+            <div>
+              <button
+                type="submit"
+                class="my-2 w-full rounded bg-yellow-400 py-2 hover:bg-yellow-500"
+              >
+                投稿する
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
-    <footer class="text-center p-3 text-gray-500">
-        <p>© 2024 E-Commerce</p>
+    <footer class="p-3 text-center text-gray-500">
+      <p>© 2024 Art-SA2</p>
     </footer>
 
     <!-- 以下は、開発用コード -->
     <!-- メインのリポジトリでは、使用しないでください。 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-</body>
+  </body>
 </html>
-
