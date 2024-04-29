@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
 
-    <title>カートリスト</title>
+    <title>ウィッシュリスト</title>
   </head>
   <body class="bg-gray-100">
     <header class="antialiased">
@@ -329,8 +329,8 @@
                     class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >アカウント情報</a
                   >
-                </li>
-              </ul> -->
+                </li> -->
+              </ul>
               <div class="py-1">
                 <ul
                   class="py-1 text-sm text-gray-700 dark:text-gray-200"
@@ -353,9 +353,13 @@
                   </li>
 
                   <!-- ログインユーザーの場合 -->
-                  <!-- <li>
-                      <a href="#" class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ログアウト</a>
-                  </li> -->
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 font-bold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >ログアウト</a
+                    >
+                  </li>
                 </ul>
               </div>
 
@@ -437,13 +441,62 @@
 
     <!-- 作品詳細 -->
     <div class="flex flex-col items-center pt-10 antialiased">
-      <!-- カートリスト -->
+      <!-- ウィッシュリスト -->
       <div class="flex w-full flex-col space-y-4 py-4 md:w-4/5 lg:w-1/2">
         <h1
           class="py-2 text-center text-2xl font-bold md:text-start md:text-4xl"
         >
-          カートリスト
+          ウィッシュリスト
         </h1>
+
+        <div class="flex justify-between px-6">
+          <!-- ウィッシュリストのアカウント名 -->
+          <div class="flex items-center gap-4">
+            <!-- デフォルトアバターアイコン -->
+            <div
+              class="relative h-8 w-8 overflow-hidden rounded-full bg-gray-100 dark:bg-gray-600"
+            >
+              <svg
+                class="absolute -left-1 h-12 w-12 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+
+            <div class="font-medium">
+              <div>UserAさん</div>
+            </div>
+          </div>
+
+          <a href="#" class="flex items-end text-sky-500">
+            <svg
+              class="h-6 w-6"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13.213 9.787a3.391 3.391 0 0 0-4.795 0l-3.425 3.426a3.39 3.39 0 0 0 4.795 4.794l.321-.304m-.321-4.49a3.39 3.39 0 0 0 4.795 0l3.424-3.426a3.39 3.39 0 0 0-4.794-4.795l-1.028.961"
+              />
+            </svg>
+
+            <p>リンクの共有</p>
+          </a>
+        </div>
 
         <!-- 作品1 -->
         <div
@@ -540,7 +593,7 @@
           <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
             <img
               src="/src/public/assets/painting2.jpg"
-              class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+              class="block h-1/2 rounded-lg shadow-xl md:h-full"
               alt=""
             />
           </div>
@@ -549,7 +602,7 @@
           <div
             class="ml-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
           >
-            <div class="w-full space-y-2 md:w-2/3">
+            <div class="w-full space-y-2 md:w-2/3 lg:w-1/3">
               <a href="#">
                 <h1 class="text-lg text-sky-500">絵画02</h1>
               </a>
@@ -588,7 +641,7 @@
             >
               <button
                 type="button"
-                class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                class="w-full rounded-full bg-yellow-400 p-2 hover:bg-yellow-500"
               >
                 ご購入手続きへ
               </button>
@@ -627,7 +680,7 @@
           <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
             <img
               src="/src/public/assets/painting2.jpg"
-              class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+              class="block h-1/2 rounded-lg shadow-xl md:h-full"
               alt=""
             />
           </div>
@@ -636,7 +689,7 @@
           <div
             class="ml-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
           >
-            <div class="w-full space-y-2 md:w-2/3">
+            <div class="w-full space-y-2 md:w-2/3 lg:w-1/3">
               <a href="#">
                 <h1 class="text-lg text-sky-500">絵画02</h1>
               </a>
@@ -675,7 +728,7 @@
             >
               <button
                 type="button"
-                class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                class="w-full rounded-full bg-yellow-400 p-2 hover:bg-yellow-500"
               >
                 ご購入手続きへ
               </button>
@@ -714,7 +767,7 @@
           <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
             <img
               src="/src/public/assets/painting2.jpg"
-              class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+              class="block h-1/2 rounded-lg shadow-xl md:h-full"
               alt=""
             />
           </div>
@@ -723,7 +776,7 @@
           <div
             class="ml-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
           >
-            <div class="w-full space-y-2 md:w-2/3">
+            <div class="w-full space-y-2 md:w-2/3 lg:w-1/3">
               <a href="#">
                 <h1 class="text-lg text-sky-500">絵画02</h1>
               </a>
@@ -762,7 +815,7 @@
             >
               <button
                 type="button"
-                class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                class="w-full rounded-full bg-yellow-400 p-2 hover:bg-yellow-500"
               >
                 ご購入手続きへ
               </button>
@@ -801,7 +854,7 @@
           <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
             <img
               src="/src/public/assets/painting2.jpg"
-              class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+              class="block h-1/2 rounded-lg shadow-xl md:h-full"
               alt=""
             />
           </div>
@@ -810,7 +863,7 @@
           <div
             class="ml-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
           >
-            <div class="w-full space-y-2 md:w-2/3">
+            <div class="w-full space-y-2 md:w-2/3 lg:w-1/3">
               <a href="#">
                 <h1 class="text-lg text-sky-500">絵画02</h1>
               </a>
@@ -849,7 +902,7 @@
             >
               <button
                 type="button"
-                class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                class="w-full rounded-full bg-yellow-400 p-2 hover:bg-yellow-500"
               >
                 ご購入手続きへ
               </button>
@@ -888,7 +941,7 @@
           <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
             <img
               src="/src/public/assets/painting2.jpg"
-              class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+              class="block h-1/2 rounded-lg shadow-xl md:h-full"
               alt=""
             />
           </div>
@@ -897,7 +950,7 @@
           <div
             class="ml-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
           >
-            <div class="w-full space-y-2 md:w-2/3">
+            <div class="w-full space-y-2 md:w-2/3 lg:w-1/3">
               <a href="#">
                 <h1 class="text-lg text-sky-500">絵画02</h1>
               </a>
@@ -936,7 +989,7 @@
             >
               <button
                 type="button"
-                class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                class="w-full rounded-full bg-yellow-400 p-2 hover:bg-yellow-500"
               >
                 ご購入手続きへ
               </button>
@@ -975,7 +1028,7 @@
           <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
             <img
               src="/src/public/assets/painting2.jpg"
-              class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+              class="block h-1/2 rounded-lg shadow-xl md:h-full"
               alt=""
             />
           </div>
@@ -984,7 +1037,7 @@
           <div
             class="ml-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
           >
-            <div class="w-full space-y-2 md:w-2/3">
+            <div class="w-full space-y-2 md:w-2/3 lg:w-1/3">
               <a href="#">
                 <h1 class="text-lg text-sky-500">絵画02</h1>
               </a>
@@ -1023,7 +1076,7 @@
             >
               <button
                 type="button"
-                class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                class="w-full rounded-full bg-yellow-400 p-2 hover:bg-yellow-500"
               >
                 ご購入手続きへ
               </button>
@@ -1062,7 +1115,7 @@
           <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
             <img
               src="/src/public/assets/painting2.jpg"
-              class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+              class="block h-1/2 rounded-lg shadow-xl md:h-full"
               alt=""
             />
           </div>
@@ -1071,7 +1124,7 @@
           <div
             class="ml-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
           >
-            <div class="w-full space-y-2 md:w-2/3">
+            <div class="w-full space-y-2 md:w-2/3 lg:w-1/3">
               <a href="#">
                 <h1 class="text-lg text-sky-500">絵画02</h1>
               </a>
@@ -1110,7 +1163,7 @@
             >
               <button
                 type="button"
-                class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                class="w-full rounded-full bg-yellow-400 p-2 hover:bg-yellow-500"
               >
                 ご購入手続きへ
               </button>
@@ -1149,7 +1202,7 @@
           <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
             <img
               src="/src/public/assets/painting2.jpg"
-              class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+              class="block h-1/2 rounded-lg shadow-xl md:h-full"
               alt=""
             />
           </div>
@@ -1158,7 +1211,7 @@
           <div
             class="ml-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
           >
-            <div class="w-full space-y-2 md:w-2/3">
+            <div class="w-full space-y-2 md:w-2/3 lg:w-1/3">
               <a href="#">
                 <h1 class="text-lg text-sky-500">絵画02</h1>
               </a>
@@ -1197,7 +1250,7 @@
             >
               <button
                 type="button"
-                class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                class="w-full rounded-full bg-yellow-400 p-2 hover:bg-yellow-500"
               >
                 ご購入手続きへ
               </button>
@@ -1236,7 +1289,7 @@
           <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
             <img
               src="/src/public/assets/painting2.jpg"
-              class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+              class="block h-1/2 rounded-lg shadow-xl md:h-full"
               alt=""
             />
           </div>
@@ -1245,7 +1298,7 @@
           <div
             class="ml-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
           >
-            <div class="w-full space-y-2 md:w-2/3">
+            <div class="w-full space-y-2 md:w-2/3 lg:w-1/3">
               <a href="#">
                 <h1 class="text-lg text-sky-500">絵画02</h1>
               </a>
@@ -1284,7 +1337,7 @@
             >
               <button
                 type="button"
-                class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                class="w-full rounded-full bg-yellow-400 p-2 hover:bg-yellow-500"
               >
                 ご購入手続きへ
               </button>
