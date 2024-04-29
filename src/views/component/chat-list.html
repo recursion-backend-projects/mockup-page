@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
 
-    <title>購入履歴</title>
+    <title>チャットリスト</title>
   </head>
   <body class="bg-gray-100">
     <header class="antialiased">
@@ -439,29 +439,19 @@
       </nav>
     </header>
 
-    <!-- 購入履歴 -->
+    <!-- チャットリスト -->
     <div class="flex flex-col items-center pt-10 antialiased">
       <div class="flex w-full flex-col space-y-4 py-4 md:w-4/5 lg:w-1/2">
         <h1
           class="py-2 text-center text-2xl font-bold md:text-start md:text-4xl"
         >
-          購入履歴
+          チャットリスト
         </h1>
 
         <!-- 作品1 -->
         <div
-          class="mx-2 flex flex-col divide-y-2 divide-gray-300 rounded-2xl border border-black bg-white p-3 md:p-6"
+          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
         >
-          <div class="flex flex-col justify-between pb-2 md:flex-row">
-            <div>
-              <p class="text-sm lg:text-base">購入日: 2024年4月25日</p>
-              <p class="text-sm lg:text-base">合計: ¥883</p>
-            </div>
-            <p class="flex items-end text-sm lg:text-base">
-              注文番号: xxx-xxxxxxx-xxxxxxx
-            </p>
-          </div>
-
           <div class="flex pt-2">
             <!-- 作品画像 -->
             <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
@@ -485,7 +475,10 @@
                   </h1>
                 </a>
                 <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <p class="text-sm lg:text-base">デジタル作品</p>
+                <!-- 星評価を★と☆で表現する -->
+                <p class="text-sm font-bold text-orange-500 lg:text-base">
+                  ★★★★★
+                </p>
               </div>
 
               <!-- オプションボタン -->
@@ -494,15 +487,32 @@
               >
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                 >
-                  領収書を発行する
+                  チャットする
                 </button>
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 >
-                  レビューを書く
+                  <svg
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                    />
+                  </svg>
+                  削除
                 </button>
               </div>
             </div>
@@ -511,18 +521,8 @@
 
         <!-- 作品2 -->
         <div
-          class="mx-2 flex flex-col divide-y-2 divide-gray-300 rounded-2xl border border-black bg-white p-3 md:p-6"
+          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
         >
-          <div class="flex flex-col justify-between pb-2 md:flex-row">
-            <div>
-              <p class="text-sm lg:text-base">購入日: 2024年4月25日</p>
-              <p class="text-sm lg:text-base">合計: ¥883</p>
-            </div>
-            <p class="flex items-end text-sm lg:text-base">
-              注文番号: xxx-xxxxxxx-xxxxxxx
-            </p>
-          </div>
-
           <div class="flex pt-2">
             <!-- 作品画像 -->
             <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
@@ -546,7 +546,10 @@
                   </h1>
                 </a>
                 <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <p class="text-sm lg:text-base">デジタル作品</p>
+                <!-- 星評価を★と☆で表現する -->
+                <p class="text-sm font-bold text-orange-500 lg:text-base">
+                  ★★★★★
+                </p>
               </div>
 
               <!-- オプションボタン -->
@@ -555,15 +558,32 @@
               >
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                 >
-                  領収書を発行する
+                  チャットする
                 </button>
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 >
-                  レビューを書く
+                  <svg
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                    />
+                  </svg>
+                  削除
                 </button>
               </div>
             </div>
@@ -572,18 +592,8 @@
 
         <!-- 作品3 -->
         <div
-          class="mx-2 flex flex-col divide-y-2 divide-gray-300 rounded-2xl border border-black bg-white p-3 md:p-6"
+          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
         >
-          <div class="flex flex-col justify-between pb-2 md:flex-row">
-            <div>
-              <p class="text-sm lg:text-base">購入日: 2024年4月25日</p>
-              <p class="text-sm lg:text-base">合計: ¥883</p>
-            </div>
-            <p class="flex items-end text-sm lg:text-base">
-              注文番号: xxx-xxxxxxx-xxxxxxx
-            </p>
-          </div>
-
           <div class="flex pt-2">
             <!-- 作品画像 -->
             <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
@@ -607,7 +617,10 @@
                   </h1>
                 </a>
                 <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <p class="text-sm lg:text-base">デジタル作品</p>
+                <!-- 星評価を★と☆で表現する -->
+                <p class="text-sm font-bold text-orange-500 lg:text-base">
+                  ★★★★★
+                </p>
               </div>
 
               <!-- オプションボタン -->
@@ -616,15 +629,32 @@
               >
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                 >
-                  領収書を発行する
+                  チャットする
                 </button>
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 >
-                  レビューを書く
+                  <svg
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                    />
+                  </svg>
+                  削除
                 </button>
               </div>
             </div>
@@ -633,18 +663,8 @@
 
         <!-- 作品4 -->
         <div
-          class="mx-2 flex flex-col divide-y-2 divide-gray-300 rounded-2xl border border-black bg-white p-3 md:p-6"
+          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
         >
-          <div class="flex flex-col justify-between pb-2 md:flex-row">
-            <div>
-              <p class="text-sm lg:text-base">購入日: 2024年4月25日</p>
-              <p class="text-sm lg:text-base">合計: ¥883</p>
-            </div>
-            <p class="flex items-end text-sm lg:text-base">
-              注文番号: xxx-xxxxxxx-xxxxxxx
-            </p>
-          </div>
-
           <div class="flex pt-2">
             <!-- 作品画像 -->
             <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
@@ -668,7 +688,10 @@
                   </h1>
                 </a>
                 <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <p class="text-sm lg:text-base">デジタル作品</p>
+                <!-- 星評価を★と☆で表現する -->
+                <p class="text-sm font-bold text-orange-500 lg:text-base">
+                  ★★★★★
+                </p>
               </div>
 
               <!-- オプションボタン -->
@@ -677,15 +700,32 @@
               >
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                 >
-                  領収書を発行する
+                  チャットする
                 </button>
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 >
-                  レビューを書く
+                  <svg
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                    />
+                  </svg>
+                  削除
                 </button>
               </div>
             </div>
@@ -694,18 +734,8 @@
 
         <!-- 作品5 -->
         <div
-          class="mx-2 flex flex-col divide-y-2 divide-gray-300 rounded-2xl border border-black bg-white p-3 md:p-6"
+          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
         >
-          <div class="flex flex-col justify-between pb-2 md:flex-row">
-            <div>
-              <p class="text-sm lg:text-base">購入日: 2024年4月25日</p>
-              <p class="text-sm lg:text-base">合計: ¥883</p>
-            </div>
-            <p class="flex items-end text-sm lg:text-base">
-              注文番号: xxx-xxxxxxx-xxxxxxx
-            </p>
-          </div>
-
           <div class="flex pt-2">
             <!-- 作品画像 -->
             <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
@@ -729,7 +759,10 @@
                   </h1>
                 </a>
                 <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <p class="text-sm lg:text-base">デジタル作品</p>
+                <!-- 星評価を★と☆で表現する -->
+                <p class="text-sm font-bold text-orange-500 lg:text-base">
+                  ★★★★★
+                </p>
               </div>
 
               <!-- オプションボタン -->
@@ -738,15 +771,32 @@
               >
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                 >
-                  領収書を発行する
+                  チャットする
                 </button>
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 >
-                  レビューを書く
+                  <svg
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                    />
+                  </svg>
+                  削除
                 </button>
               </div>
             </div>
@@ -755,18 +805,8 @@
 
         <!-- 作品6 -->
         <div
-          class="mx-2 flex flex-col divide-y-2 divide-gray-300 rounded-2xl border border-black bg-white p-3 md:p-6"
+          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
         >
-          <div class="flex flex-col justify-between pb-2 md:flex-row">
-            <div>
-              <p class="text-sm lg:text-base">購入日: 2024年4月25日</p>
-              <p class="text-sm lg:text-base">合計: ¥883</p>
-            </div>
-            <p class="flex items-end text-sm lg:text-base">
-              注文番号: xxx-xxxxxxx-xxxxxxx
-            </p>
-          </div>
-
           <div class="flex pt-2">
             <!-- 作品画像 -->
             <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
@@ -790,7 +830,10 @@
                   </h1>
                 </a>
                 <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <p class="text-sm lg:text-base">デジタル作品</p>
+                <!-- 星評価を★と☆で表現する -->
+                <p class="text-sm font-bold text-orange-500 lg:text-base">
+                  ★★★★★
+                </p>
               </div>
 
               <!-- オプションボタン -->
@@ -799,15 +842,32 @@
               >
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                 >
-                  領収書を発行する
+                  チャットする
                 </button>
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 >
-                  レビューを書く
+                  <svg
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                    />
+                  </svg>
+                  削除
                 </button>
               </div>
             </div>
@@ -816,18 +876,8 @@
 
         <!-- 作品7 -->
         <div
-          class="mx-2 flex flex-col divide-y-2 divide-gray-300 rounded-2xl border border-black bg-white p-3 md:p-6"
+          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
         >
-          <div class="flex flex-col justify-between pb-2 md:flex-row">
-            <div>
-              <p class="text-sm lg:text-base">購入日: 2024年4月25日</p>
-              <p class="text-sm lg:text-base">合計: ¥883</p>
-            </div>
-            <p class="flex items-end text-sm lg:text-base">
-              注文番号: xxx-xxxxxxx-xxxxxxx
-            </p>
-          </div>
-
           <div class="flex pt-2">
             <!-- 作品画像 -->
             <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
@@ -851,7 +901,10 @@
                   </h1>
                 </a>
                 <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <p class="text-sm lg:text-base">デジタル作品</p>
+                <!-- 星評価を★と☆で表現する -->
+                <p class="text-sm font-bold text-orange-500 lg:text-base">
+                  ★★★★★
+                </p>
               </div>
 
               <!-- オプションボタン -->
@@ -860,15 +913,32 @@
               >
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                 >
-                  領収書を発行する
+                  チャットする
                 </button>
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 >
-                  レビューを書く
+                  <svg
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                    />
+                  </svg>
+                  削除
                 </button>
               </div>
             </div>
@@ -877,18 +947,8 @@
 
         <!-- 作品8 -->
         <div
-          class="mx-2 flex flex-col divide-y-2 divide-gray-300 rounded-2xl border border-black bg-white p-3 md:p-6"
+          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
         >
-          <div class="flex flex-col justify-between pb-2 md:flex-row">
-            <div>
-              <p class="text-sm lg:text-base">購入日: 2024年4月25日</p>
-              <p class="text-sm lg:text-base">合計: ¥883</p>
-            </div>
-            <p class="flex items-end text-sm lg:text-base">
-              注文番号: xxx-xxxxxxx-xxxxxxx
-            </p>
-          </div>
-
           <div class="flex pt-2">
             <!-- 作品画像 -->
             <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
@@ -912,7 +972,10 @@
                   </h1>
                 </a>
                 <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <p class="text-sm lg:text-base">デジタル作品</p>
+                <!-- 星評価を★と☆で表現する -->
+                <p class="text-sm font-bold text-orange-500 lg:text-base">
+                  ★★★★★
+                </p>
               </div>
 
               <!-- オプションボタン -->
@@ -921,15 +984,32 @@
               >
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                 >
-                  領収書を発行する
+                  チャットする
                 </button>
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 >
-                  レビューを書く
+                  <svg
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                    />
+                  </svg>
+                  削除
                 </button>
               </div>
             </div>
@@ -938,18 +1018,8 @@
 
         <!-- 作品9 -->
         <div
-          class="mx-2 flex flex-col divide-y-2 divide-gray-300 rounded-2xl border border-black bg-white p-3 md:p-6"
+          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
         >
-          <div class="flex flex-col justify-between pb-2 md:flex-row">
-            <div>
-              <p class="text-sm lg:text-base">購入日: 2024年4月25日</p>
-              <p class="text-sm lg:text-base">合計: ¥883</p>
-            </div>
-            <p class="flex items-end text-sm lg:text-base">
-              注文番号: xxx-xxxxxxx-xxxxxxx
-            </p>
-          </div>
-
           <div class="flex pt-2">
             <!-- 作品画像 -->
             <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
@@ -973,7 +1043,10 @@
                   </h1>
                 </a>
                 <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <p class="text-sm lg:text-base">デジタル作品</p>
+                <!-- 星評価を★と☆で表現する -->
+                <p class="text-sm font-bold text-orange-500 lg:text-base">
+                  ★★★★★
+                </p>
               </div>
 
               <!-- オプションボタン -->
@@ -982,15 +1055,32 @@
               >
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                 >
-                  領収書を発行する
+                  チャットする
                 </button>
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 >
-                  レビューを書く
+                  <svg
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                    />
+                  </svg>
+                  削除
                 </button>
               </div>
             </div>
@@ -999,18 +1089,8 @@
 
         <!-- 作品10 -->
         <div
-          class="mx-2 flex flex-col divide-y-2 divide-gray-300 rounded-2xl border border-black bg-white p-3 md:p-6"
+          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
         >
-          <div class="flex flex-col justify-between pb-2 md:flex-row">
-            <div>
-              <p class="text-sm lg:text-base">購入日: 2024年4月25日</p>
-              <p class="text-sm lg:text-base">合計: ¥883</p>
-            </div>
-            <p class="flex items-end text-sm lg:text-base">
-              注文番号: xxx-xxxxxxx-xxxxxxx
-            </p>
-          </div>
-
           <div class="flex pt-2">
             <!-- 作品画像 -->
             <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
@@ -1034,7 +1114,10 @@
                   </h1>
                 </a>
                 <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <p class="text-sm lg:text-base">デジタル作品</p>
+                <!-- 星評価を★と☆で表現する -->
+                <p class="text-sm font-bold text-orange-500 lg:text-base">
+                  ★★★★★
+                </p>
               </div>
 
               <!-- オプションボタン -->
@@ -1043,15 +1126,32 @@
               >
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                 >
-                  領収書を発行する
+                  チャットする
                 </button>
                 <button
                   type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-1 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:p-2 lg:text-base"
+                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 >
-                  レビューを書く
+                  <svg
+                    class="h-6 w-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                    />
+                  </svg>
+                  削除
                 </button>
               </div>
             </div>
