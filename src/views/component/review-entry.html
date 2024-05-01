@@ -14,7 +14,7 @@
 
     <title>レビュー記入</title>
   </head>
-  <body class="bg-gray-100">
+  <body class="flex h-screen flex-col bg-gray-100">
     <header class="antialiased">
       <nav
         class="border-gray-200 bg-white px-4 py-2.5 md:px-6 dark:bg-gray-800"
@@ -62,7 +62,7 @@
                 </div>
                 <input
                   type="text"
-                  name="title"
+                  name="topbar-search"
                   id="topbar-search"
                   class="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-9 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
                   placeholder="キーワードを検索"
@@ -439,104 +439,117 @@
       </nav>
     </header>
 
-    <!-- レビュー記入 -->
-    <div
-      class="flex flex-col items-center divide-y-2 divide-gray-300 pt-10 antialiased"
-    >
+    <main class="flex-grow">
+      <!-- レビュー記入 -->
       <div
-        class="flex w-full flex-col items-center justify-center pb-10 md:w-3/4 md:flex-row md:items-start"
+        class="flex flex-col items-center divide-y-2 divide-gray-300 pt-10 antialiased"
       >
-        <!-- 作品画像 -->
-        <img
-          src="/src/public/assets/painting2.jpg"
-          class="block w-2/3 rounded-lg shadow-xl md:w-1/2 lg:w-1/3"
-          alt=""
-        />
-        <!-- 作品情報 -->
         <div
-          class="w-full space-y-2 px-12 py-4 md:w-1/2 md:px-2 md:py-0 lg:w-1/3 lg:px-12"
+          class="flex w-full flex-col items-center justify-center pb-10 md:w-3/4 md:flex-row md:items-start"
         >
-          <a href="#">
-            <h1
-              class="text-xl text-sky-400 hover:text-orange-400 hover:underline lg:text-2xl"
-            >
-              絵画02
-            </h1>
-          </a>
-          <p class="text-sm lg:text-base">作者 : エミリオ・ヴァレンティ</p>
-          <p class="text-sm lg:text-base">リリース日 : 2021年4月25日</p>
-          <!-- 星評価を★と☆で表現する -->
-          <p class="text-sm font-bold text-orange-500 lg:text-base">
-            総合評価 : ★★★★★
-          </p>
-        </div>
-      </div>
-
-      <!-- レビュー記入フォーム -->
-      <div class="flex w-full flex-col py-4 md:w-1/2 lg:w-1/3">
-        <div
-          class="container items-center justify-center space-y-4 px-6 md:pl-0"
-        >
-          <h2 class="text-center text-xl md:text-2xl">レビューを書く</h2>
-          <p class="text-center text-base text-gray-500 md:text-lg">
-            購入した作品への思いを投稿しよう
-          </p>
-
-          <form
-            action="#"
-            method="post"
-            class="space-y-4 rounded-xl border border-gray-200 bg-white p-4 shadow-xl"
+          <!-- 作品画像 -->
+          <img
+            src="/src/public/assets/painting2.jpg"
+            class="block w-2/3 rounded-lg shadow-xl md:w-1/2 lg:w-1/3"
+            alt=""
+          />
+          <!-- 作品情報 -->
+          <div
+            class="w-full space-y-2 px-12 py-4 md:w-1/2 md:px-2 md:py-0 lg:w-1/3 lg:px-12"
           >
-            <div>
-              <label for="title">タイトル</label>
-              <input
-                type="text"
-                name="title"
-                class="w-full rounded border border-gray-300 p-2"
-              />
-            </div>
-            <div>
-              <label for="comment">コメント</label>
-              <textarea
-                name="comment"
-                rows="4"
-                class="w-full rounded border border-gray-300 p-2"
-              ></textarea>
-            </div>
-            <div>
-              <label
-                for="star-rate-select"
-                class="ml-1 block text-lg text-gray-900"
-                >評価</label
+            <a href="#">
+              <h1
+                class="text-xl text-sky-400 hover:text-orange-400 hover:underline lg:text-2xl"
               >
-              <select
-                id="star-rate-select"
-                class="ml-2 block rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-              >
-                <option disabled selected>評価してください</option>
-                <option value="5">5</option>
-                <option value="4">4</option>
-                <option value="3">3</option>
-                <option value="2">2</option>
-                <option value="1">1</option>
-              </select>
-            </div>
-            <div>
-              <button
-                type="submit"
-                class="my-2 w-full rounded bg-yellow-400 py-2 hover:bg-yellow-500"
-              >
-                投稿する
-              </button>
-            </div>
-          </form>
+                絵画02
+              </h1>
+            </a>
+            <p class="text-sm lg:text-base">作者 : エミリオ・ヴァレンティ</p>
+            <p class="text-sm lg:text-base">リリース日 : 2021年4月25日</p>
+            <!-- 星評価を★と☆で表現する -->
+            <p class="text-sm font-bold text-orange-500 lg:text-base">
+              総合評価 : ★★★★★
+            </p>
+          </div>
+        </div>
+
+        <!-- レビュー記入フォーム -->
+        <div class="flex w-full flex-col py-4 md:w-1/2 lg:w-1/3">
+          <div
+            class="container items-center justify-center space-y-4 px-6 md:pl-0"
+          >
+            <h2 class="text-center text-xl md:text-2xl">レビューを書く</h2>
+            <p class="text-center text-base text-gray-500 md:text-lg">
+              購入した作品への思いを投稿しよう
+            </p>
+
+            <form
+              action="#"
+              method="post"
+              class="space-y-4 rounded-xl border border-gray-200 bg-white p-4 shadow-xl"
+            >
+              <div>
+                <label for="title">タイトル</label>
+                <input
+                  type="text"
+                  name="title"
+                  class="w-full rounded border border-gray-300 p-2"
+                />
+              </div>
+              <div>
+                <label for="comment">コメント</label>
+                <textarea
+                  name="comment"
+                  rows="4"
+                  class="w-full rounded border border-gray-300 p-2"
+                ></textarea>
+              </div>
+              <div>
+                <label
+                  for="star-rate-select"
+                  class="ml-1 block text-lg text-gray-900"
+                  >評価</label
+                >
+                <select
+                  id="star-rate-select"
+                  class="ml-2 block rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                >
+                  <option disabled selected>評価してください</option>
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  class="my-2 w-full rounded bg-yellow-400 py-2 hover:bg-yellow-500"
+                >
+                  投稿する
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
 
-    <footer class="p-3 text-center text-gray-500">
-      <p>© 2024 Art-SA2</p>
-    </footer>
+    <div class="mt-10 flex flex-col items-center bg-black text-white">
+      <div class="w-1/3 space-y-2 py-4">
+        <h3 class="text-lg font-bold md:text-xl">コーポレート</h3>
+        <div>
+          <a href="#" class="text-sm font-bold hover:underline md:text-base"
+            >お問い合わせ</a
+          >
+        </div>
+      </div>
+
+      <footer class="p-3 text-center">
+        <p>© 2024 Art-SA2</p>
+      </footer>
+    </div>
 
     <!-- 以下は、開発用コード -->
     <!-- メインのリポジトリでは、使用しないでください。 -->

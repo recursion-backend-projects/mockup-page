@@ -14,7 +14,7 @@
 
     <title>チャットリスト</title>
   </head>
-  <body class="bg-gray-100">
+  <body class="flex h-screen flex-col bg-gray-100">
     <header class="antialiased">
       <nav
         class="border-gray-200 bg-white px-4 py-2.5 md:px-6 dark:bg-gray-800"
@@ -62,7 +62,7 @@
                 </div>
                 <input
                   type="text"
-                  name="title"
+                  name="topbar-search"
                   id="topbar-search"
                   class="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-9 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
                   placeholder="キーワードを検索"
@@ -439,820 +439,833 @@
       </nav>
     </header>
 
-    <!-- チャットリスト -->
-    <div class="flex flex-col items-center pt-10 antialiased">
-      <div class="flex w-full flex-col space-y-4 py-4 md:w-4/5 lg:w-1/2">
-        <h1
-          class="py-2 text-center text-2xl font-bold md:text-start md:text-4xl"
-        >
-          チャットリスト
-        </h1>
+    <main class="flex-grow">
+      <!-- チャットリスト -->
+      <div class="flex flex-col items-center pt-10 antialiased">
+        <div class="flex w-full flex-col space-y-4 py-4 md:w-4/5 lg:w-1/2">
+          <h1
+            class="py-2 text-center text-2xl font-bold md:text-start md:text-4xl"
+          >
+            チャットリスト
+          </h1>
 
-        <!-- 作品1 -->
-        <div
-          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
-        >
-          <div class="flex pt-2">
-            <!-- 作品画像 -->
-            <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
-              <img
-                src="/src/public/assets/painting2.jpg"
-                class="block h-1/2 rounded-lg shadow-xl md:h-auto"
-                alt=""
-              />
-            </div>
-
-            <!-- 作品情報 -->
-            <div
-              class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
-            >
-              <div class="w-full space-y-2 md:w-2/3">
-                <a href="#">
-                  <h1
-                    class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
-                  >
-                    絵画02
-                  </h1>
-                </a>
-                <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <!-- 星評価を★と☆で表現する -->
-                <p class="text-sm font-bold text-orange-500 lg:text-base">
-                  ★★★★★
-                </p>
+          <!-- 作品1 -->
+          <div
+            class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
+          >
+            <div class="flex pt-2">
+              <!-- 作品画像 -->
+              <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
+                <img
+                  src="/src/public/assets/painting2.jpg"
+                  class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+                  alt=""
+                />
               </div>
 
-              <!-- オプションボタン -->
+              <!-- 作品情報 -->
               <div
-                class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
+                class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
               >
-                <button
-                  type="button"
-                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                <div class="w-full space-y-2 md:w-2/3">
+                  <a href="#">
+                    <h1
+                      class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
+                    >
+                      絵画02
+                    </h1>
+                  </a>
+                  <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
+                  <!-- 星評価を★と☆で表現する -->
+                  <p class="text-sm font-bold text-orange-500 lg:text-base">
+                    ★★★★★
+                  </p>
+                </div>
+
+                <!-- オプションボタン -->
+                <div
+                  class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
                 >
-                  チャットする
-                </button>
-                <button
-                  type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
+                  <button
+                    type="button"
+                    class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                   >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                    />
-                  </svg>
-                  削除
-                </button>
+                    チャットする
+                  </button>
+                  <button
+                    type="button"
+                    class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                      />
+                    </svg>
+                    削除
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- 作品2 -->
-        <div
-          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
-        >
-          <div class="flex pt-2">
-            <!-- 作品画像 -->
-            <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
-              <img
-                src="/src/public/assets/painting2.jpg"
-                class="block h-1/2 rounded-lg shadow-xl md:h-auto"
-                alt=""
-              />
-            </div>
-
-            <!-- 作品情報 -->
-            <div
-              class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
-            >
-              <div class="w-full space-y-2 md:w-2/3">
-                <a href="#">
-                  <h1
-                    class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
-                  >
-                    絵画02
-                  </h1>
-                </a>
-                <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <!-- 星評価を★と☆で表現する -->
-                <p class="text-sm font-bold text-orange-500 lg:text-base">
-                  ★★★★★
-                </p>
+          <!-- 作品2 -->
+          <div
+            class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
+          >
+            <div class="flex pt-2">
+              <!-- 作品画像 -->
+              <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
+                <img
+                  src="/src/public/assets/painting2.jpg"
+                  class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+                  alt=""
+                />
               </div>
 
-              <!-- オプションボタン -->
+              <!-- 作品情報 -->
               <div
-                class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
+                class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
               >
-                <button
-                  type="button"
-                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                <div class="w-full space-y-2 md:w-2/3">
+                  <a href="#">
+                    <h1
+                      class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
+                    >
+                      絵画02
+                    </h1>
+                  </a>
+                  <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
+                  <!-- 星評価を★と☆で表現する -->
+                  <p class="text-sm font-bold text-orange-500 lg:text-base">
+                    ★★★★★
+                  </p>
+                </div>
+
+                <!-- オプションボタン -->
+                <div
+                  class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
                 >
-                  チャットする
-                </button>
-                <button
-                  type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
+                  <button
+                    type="button"
+                    class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                   >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                    />
-                  </svg>
-                  削除
-                </button>
+                    チャットする
+                  </button>
+                  <button
+                    type="button"
+                    class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                      />
+                    </svg>
+                    削除
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- 作品3 -->
-        <div
-          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
-        >
-          <div class="flex pt-2">
-            <!-- 作品画像 -->
-            <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
-              <img
-                src="/src/public/assets/painting2.jpg"
-                class="block h-1/2 rounded-lg shadow-xl md:h-auto"
-                alt=""
-              />
-            </div>
-
-            <!-- 作品情報 -->
-            <div
-              class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
-            >
-              <div class="w-full space-y-2 md:w-2/3">
-                <a href="#">
-                  <h1
-                    class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
-                  >
-                    絵画02
-                  </h1>
-                </a>
-                <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <!-- 星評価を★と☆で表現する -->
-                <p class="text-sm font-bold text-orange-500 lg:text-base">
-                  ★★★★★
-                </p>
+          <!-- 作品3 -->
+          <div
+            class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
+          >
+            <div class="flex pt-2">
+              <!-- 作品画像 -->
+              <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
+                <img
+                  src="/src/public/assets/painting2.jpg"
+                  class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+                  alt=""
+                />
               </div>
 
-              <!-- オプションボタン -->
+              <!-- 作品情報 -->
               <div
-                class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
+                class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
               >
-                <button
-                  type="button"
-                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                <div class="w-full space-y-2 md:w-2/3">
+                  <a href="#">
+                    <h1
+                      class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
+                    >
+                      絵画02
+                    </h1>
+                  </a>
+                  <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
+                  <!-- 星評価を★と☆で表現する -->
+                  <p class="text-sm font-bold text-orange-500 lg:text-base">
+                    ★★★★★
+                  </p>
+                </div>
+
+                <!-- オプションボタン -->
+                <div
+                  class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
                 >
-                  チャットする
-                </button>
-                <button
-                  type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
+                  <button
+                    type="button"
+                    class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                   >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                    />
-                  </svg>
-                  削除
-                </button>
+                    チャットする
+                  </button>
+                  <button
+                    type="button"
+                    class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                      />
+                    </svg>
+                    削除
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- 作品4 -->
-        <div
-          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
-        >
-          <div class="flex pt-2">
-            <!-- 作品画像 -->
-            <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
-              <img
-                src="/src/public/assets/painting2.jpg"
-                class="block h-1/2 rounded-lg shadow-xl md:h-auto"
-                alt=""
-              />
-            </div>
-
-            <!-- 作品情報 -->
-            <div
-              class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
-            >
-              <div class="w-full space-y-2 md:w-2/3">
-                <a href="#">
-                  <h1
-                    class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
-                  >
-                    絵画02
-                  </h1>
-                </a>
-                <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <!-- 星評価を★と☆で表現する -->
-                <p class="text-sm font-bold text-orange-500 lg:text-base">
-                  ★★★★★
-                </p>
+          <!-- 作品4 -->
+          <div
+            class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
+          >
+            <div class="flex pt-2">
+              <!-- 作品画像 -->
+              <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
+                <img
+                  src="/src/public/assets/painting2.jpg"
+                  class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+                  alt=""
+                />
               </div>
 
-              <!-- オプションボタン -->
+              <!-- 作品情報 -->
               <div
-                class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
+                class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
               >
-                <button
-                  type="button"
-                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                <div class="w-full space-y-2 md:w-2/3">
+                  <a href="#">
+                    <h1
+                      class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
+                    >
+                      絵画02
+                    </h1>
+                  </a>
+                  <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
+                  <!-- 星評価を★と☆で表現する -->
+                  <p class="text-sm font-bold text-orange-500 lg:text-base">
+                    ★★★★★
+                  </p>
+                </div>
+
+                <!-- オプションボタン -->
+                <div
+                  class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
                 >
-                  チャットする
-                </button>
-                <button
-                  type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
+                  <button
+                    type="button"
+                    class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                   >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                    />
-                  </svg>
-                  削除
-                </button>
+                    チャットする
+                  </button>
+                  <button
+                    type="button"
+                    class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                      />
+                    </svg>
+                    削除
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- 作品5 -->
-        <div
-          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
-        >
-          <div class="flex pt-2">
-            <!-- 作品画像 -->
-            <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
-              <img
-                src="/src/public/assets/painting2.jpg"
-                class="block h-1/2 rounded-lg shadow-xl md:h-auto"
-                alt=""
-              />
-            </div>
-
-            <!-- 作品情報 -->
-            <div
-              class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
-            >
-              <div class="w-full space-y-2 md:w-2/3">
-                <a href="#">
-                  <h1
-                    class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
-                  >
-                    絵画02
-                  </h1>
-                </a>
-                <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <!-- 星評価を★と☆で表現する -->
-                <p class="text-sm font-bold text-orange-500 lg:text-base">
-                  ★★★★★
-                </p>
+          <!-- 作品5 -->
+          <div
+            class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
+          >
+            <div class="flex pt-2">
+              <!-- 作品画像 -->
+              <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
+                <img
+                  src="/src/public/assets/painting2.jpg"
+                  class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+                  alt=""
+                />
               </div>
 
-              <!-- オプションボタン -->
+              <!-- 作品情報 -->
               <div
-                class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
+                class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
               >
-                <button
-                  type="button"
-                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                <div class="w-full space-y-2 md:w-2/3">
+                  <a href="#">
+                    <h1
+                      class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
+                    >
+                      絵画02
+                    </h1>
+                  </a>
+                  <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
+                  <!-- 星評価を★と☆で表現する -->
+                  <p class="text-sm font-bold text-orange-500 lg:text-base">
+                    ★★★★★
+                  </p>
+                </div>
+
+                <!-- オプションボタン -->
+                <div
+                  class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
                 >
-                  チャットする
-                </button>
-                <button
-                  type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
+                  <button
+                    type="button"
+                    class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                   >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                    />
-                  </svg>
-                  削除
-                </button>
+                    チャットする
+                  </button>
+                  <button
+                    type="button"
+                    class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                      />
+                    </svg>
+                    削除
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- 作品6 -->
-        <div
-          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
-        >
-          <div class="flex pt-2">
-            <!-- 作品画像 -->
-            <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
-              <img
-                src="/src/public/assets/painting2.jpg"
-                class="block h-1/2 rounded-lg shadow-xl md:h-auto"
-                alt=""
-              />
-            </div>
-
-            <!-- 作品情報 -->
-            <div
-              class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
-            >
-              <div class="w-full space-y-2 md:w-2/3">
-                <a href="#">
-                  <h1
-                    class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
-                  >
-                    絵画02
-                  </h1>
-                </a>
-                <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <!-- 星評価を★と☆で表現する -->
-                <p class="text-sm font-bold text-orange-500 lg:text-base">
-                  ★★★★★
-                </p>
+          <!-- 作品6 -->
+          <div
+            class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
+          >
+            <div class="flex pt-2">
+              <!-- 作品画像 -->
+              <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
+                <img
+                  src="/src/public/assets/painting2.jpg"
+                  class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+                  alt=""
+                />
               </div>
 
-              <!-- オプションボタン -->
+              <!-- 作品情報 -->
               <div
-                class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
+                class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
               >
-                <button
-                  type="button"
-                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                <div class="w-full space-y-2 md:w-2/3">
+                  <a href="#">
+                    <h1
+                      class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
+                    >
+                      絵画02
+                    </h1>
+                  </a>
+                  <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
+                  <!-- 星評価を★と☆で表現する -->
+                  <p class="text-sm font-bold text-orange-500 lg:text-base">
+                    ★★★★★
+                  </p>
+                </div>
+
+                <!-- オプションボタン -->
+                <div
+                  class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
                 >
-                  チャットする
-                </button>
-                <button
-                  type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
+                  <button
+                    type="button"
+                    class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                   >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                    />
-                  </svg>
-                  削除
-                </button>
+                    チャットする
+                  </button>
+                  <button
+                    type="button"
+                    class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                      />
+                    </svg>
+                    削除
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- 作品7 -->
-        <div
-          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
-        >
-          <div class="flex pt-2">
-            <!-- 作品画像 -->
-            <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
-              <img
-                src="/src/public/assets/painting2.jpg"
-                class="block h-1/2 rounded-lg shadow-xl md:h-auto"
-                alt=""
-              />
-            </div>
-
-            <!-- 作品情報 -->
-            <div
-              class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
-            >
-              <div class="w-full space-y-2 md:w-2/3">
-                <a href="#">
-                  <h1
-                    class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
-                  >
-                    絵画02
-                  </h1>
-                </a>
-                <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <!-- 星評価を★と☆で表現する -->
-                <p class="text-sm font-bold text-orange-500 lg:text-base">
-                  ★★★★★
-                </p>
+          <!-- 作品7 -->
+          <div
+            class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
+          >
+            <div class="flex pt-2">
+              <!-- 作品画像 -->
+              <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
+                <img
+                  src="/src/public/assets/painting2.jpg"
+                  class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+                  alt=""
+                />
               </div>
 
-              <!-- オプションボタン -->
+              <!-- 作品情報 -->
               <div
-                class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
+                class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
               >
-                <button
-                  type="button"
-                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                <div class="w-full space-y-2 md:w-2/3">
+                  <a href="#">
+                    <h1
+                      class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
+                    >
+                      絵画02
+                    </h1>
+                  </a>
+                  <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
+                  <!-- 星評価を★と☆で表現する -->
+                  <p class="text-sm font-bold text-orange-500 lg:text-base">
+                    ★★★★★
+                  </p>
+                </div>
+
+                <!-- オプションボタン -->
+                <div
+                  class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
                 >
-                  チャットする
-                </button>
-                <button
-                  type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
+                  <button
+                    type="button"
+                    class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                   >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                    />
-                  </svg>
-                  削除
-                </button>
+                    チャットする
+                  </button>
+                  <button
+                    type="button"
+                    class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                      />
+                    </svg>
+                    削除
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- 作品8 -->
-        <div
-          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
-        >
-          <div class="flex pt-2">
-            <!-- 作品画像 -->
-            <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
-              <img
-                src="/src/public/assets/painting2.jpg"
-                class="block h-1/2 rounded-lg shadow-xl md:h-auto"
-                alt=""
-              />
-            </div>
-
-            <!-- 作品情報 -->
-            <div
-              class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
-            >
-              <div class="w-full space-y-2 md:w-2/3">
-                <a href="#">
-                  <h1
-                    class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
-                  >
-                    絵画02
-                  </h1>
-                </a>
-                <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <!-- 星評価を★と☆で表現する -->
-                <p class="text-sm font-bold text-orange-500 lg:text-base">
-                  ★★★★★
-                </p>
+          <!-- 作品8 -->
+          <div
+            class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
+          >
+            <div class="flex pt-2">
+              <!-- 作品画像 -->
+              <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
+                <img
+                  src="/src/public/assets/painting2.jpg"
+                  class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+                  alt=""
+                />
               </div>
 
-              <!-- オプションボタン -->
+              <!-- 作品情報 -->
               <div
-                class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
+                class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
               >
-                <button
-                  type="button"
-                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                <div class="w-full space-y-2 md:w-2/3">
+                  <a href="#">
+                    <h1
+                      class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
+                    >
+                      絵画02
+                    </h1>
+                  </a>
+                  <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
+                  <!-- 星評価を★と☆で表現する -->
+                  <p class="text-sm font-bold text-orange-500 lg:text-base">
+                    ★★★★★
+                  </p>
+                </div>
+
+                <!-- オプションボタン -->
+                <div
+                  class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
                 >
-                  チャットする
-                </button>
-                <button
-                  type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
+                  <button
+                    type="button"
+                    class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                   >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                    />
-                  </svg>
-                  削除
-                </button>
+                    チャットする
+                  </button>
+                  <button
+                    type="button"
+                    class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                      />
+                    </svg>
+                    削除
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- 作品9 -->
-        <div
-          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
-        >
-          <div class="flex pt-2">
-            <!-- 作品画像 -->
-            <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
-              <img
-                src="/src/public/assets/painting2.jpg"
-                class="block h-1/2 rounded-lg shadow-xl md:h-auto"
-                alt=""
-              />
-            </div>
-
-            <!-- 作品情報 -->
-            <div
-              class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
-            >
-              <div class="w-full space-y-2 md:w-2/3">
-                <a href="#">
-                  <h1
-                    class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
-                  >
-                    絵画02
-                  </h1>
-                </a>
-                <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <!-- 星評価を★と☆で表現する -->
-                <p class="text-sm font-bold text-orange-500 lg:text-base">
-                  ★★★★★
-                </p>
+          <!-- 作品9 -->
+          <div
+            class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
+          >
+            <div class="flex pt-2">
+              <!-- 作品画像 -->
+              <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
+                <img
+                  src="/src/public/assets/painting2.jpg"
+                  class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+                  alt=""
+                />
               </div>
 
-              <!-- オプションボタン -->
+              <!-- 作品情報 -->
               <div
-                class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
+                class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
               >
-                <button
-                  type="button"
-                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                <div class="w-full space-y-2 md:w-2/3">
+                  <a href="#">
+                    <h1
+                      class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
+                    >
+                      絵画02
+                    </h1>
+                  </a>
+                  <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
+                  <!-- 星評価を★と☆で表現する -->
+                  <p class="text-sm font-bold text-orange-500 lg:text-base">
+                    ★★★★★
+                  </p>
+                </div>
+
+                <!-- オプションボタン -->
+                <div
+                  class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
                 >
-                  チャットする
-                </button>
-                <button
-                  type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
+                  <button
+                    type="button"
+                    class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                   >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                    />
-                  </svg>
-                  削除
-                </button>
+                    チャットする
+                  </button>
+                  <button
+                    type="button"
+                    class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                      />
+                    </svg>
+                    削除
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- 作品10 -->
-        <div
-          class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
-        >
-          <div class="flex pt-2">
-            <!-- 作品画像 -->
-            <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
-              <img
-                src="/src/public/assets/painting2.jpg"
-                class="block h-1/2 rounded-lg shadow-xl md:h-auto"
-                alt=""
-              />
-            </div>
-
-            <!-- 作品情報 -->
-            <div
-              class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
-            >
-              <div class="w-full space-y-2 md:w-2/3">
-                <a href="#">
-                  <h1
-                    class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
-                  >
-                    絵画02
-                  </h1>
-                </a>
-                <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
-                <!-- 星評価を★と☆で表現する -->
-                <p class="text-sm font-bold text-orange-500 lg:text-base">
-                  ★★★★★
-                </p>
+          <!-- 作品10 -->
+          <div
+            class="mx-2 flex flex-col rounded-2xl border border-black bg-white p-3 md:p-6"
+          >
+            <div class="flex pt-2">
+              <!-- 作品画像 -->
+              <div class="flex w-1/2 items-center md:w-2/5 lg:w-1/3">
+                <img
+                  src="/src/public/assets/painting2.jpg"
+                  class="block h-1/2 rounded-lg shadow-xl md:h-auto"
+                  alt=""
+                />
               </div>
 
-              <!-- オプションボタン -->
+              <!-- 作品情報 -->
               <div
-                class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
+                class="ml-2 mt-2 flex w-1/2 flex-col justify-center md:ml-6 md:w-full md:flex-row md:justify-between"
               >
-                <button
-                  type="button"
-                  class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
+                <div class="w-full space-y-2 md:w-2/3">
+                  <a href="#">
+                    <h1
+                      class="text-lg text-sky-400 hover:text-orange-400 hover:underline"
+                    >
+                      絵画02
+                    </h1>
+                  </a>
+                  <p class="text-sm lg:text-base">エミリオ・ヴァレンティ</p>
+                  <!-- 星評価を★と☆で表現する -->
+                  <p class="text-sm font-bold text-orange-500 lg:text-base">
+                    ★★★★★
+                  </p>
+                </div>
+
+                <!-- オプションボタン -->
+                <div
+                  class="flex w-full flex-col items-center justify-center space-y-2 pt-2 md:w-1/3 md:space-y-6 md:pt-0"
                 >
-                  チャットする
-                </button>
-                <button
-                  type="button"
-                  class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
+                  <button
+                    type="button"
+                    class="w-full rounded-full bg-yellow-400 p-3 text-sm hover:bg-yellow-500 lg:p-2 lg:text-base"
                   >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                    />
-                  </svg>
-                  削除
-                </button>
+                    チャットする
+                  </button>
+                  <button
+                    type="button"
+                    class="flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                      />
+                    </svg>
+                    削除
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- ページネーション -->
-    <div class="flex items-center justify-center py-6">
-      <nav aria-label="Page navigation">
-        <ul class="flex h-10 items-center -space-x-px text-base">
-          <li>
-            <a
-              href="#"
-              class="ms-0 flex h-10 items-center justify-center rounded-s-lg border border-e-0 border-gray-300 bg-white px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            >
-              <span class="sr-only">前へ</span>
-              <svg
-                class="h-3 w-3 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
+      <!-- ページネーション -->
+      <div class="flex items-center justify-center py-6">
+        <nav aria-label="Page navigation">
+          <ul class="flex h-10 items-center -space-x-px text-base">
+            <li>
+              <a
+                href="#"
+                class="ms-0 flex h-10 items-center justify-center rounded-s-lg border border-e-0 border-gray-300 bg-white px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 1 1 5l4 4"
-                />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              aria-current="page"
-              class="z-10 flex h-10 items-center justify-center border border-blue-300 bg-blue-50 px-4 leading-tight text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
-              >1</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="flex h-10 items-center justify-center border border-gray-300 bg-white px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >2</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="flex h-10 items-center justify-center border border-gray-300 bg-white px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >3</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="flex h-10 items-center justify-center border border-gray-300 bg-white px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >4</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="flex h-10 items-center justify-center border border-gray-300 bg-white px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              >5</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="flex h-10 items-center justify-center rounded-e-lg border border-gray-300 bg-white px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            >
-              <span class="sr-only">次へ</span>
-              <svg
-                class="h-3 w-3 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
+                <span class="sr-only">前へ</span>
+                <svg
+                  class="h-3 w-3 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 1 1 5l4 4"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                aria-current="page"
+                class="z-10 flex h-10 items-center justify-center border border-blue-300 bg-blue-50 px-4 leading-tight text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+                >1</a
               >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m1 9 4-4-4-4"
-                />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex h-10 items-center justify-center border border-gray-300 bg-white px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                >2</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex h-10 items-center justify-center border border-gray-300 bg-white px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                >3</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex h-10 items-center justify-center border border-gray-300 bg-white px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                >4</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex h-10 items-center justify-center border border-gray-300 bg-white px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                >5</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex h-10 items-center justify-center rounded-e-lg border border-gray-300 bg-white px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+              >
+                <span class="sr-only">次へ</span>
+                <svg
+                  class="h-3 w-3 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 9 4-4-4-4"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
 
-    <footer class="p-3 text-center text-gray-500">
-      <p>© 2024 Art-SA2</p>
-    </footer>
+    <div class="mt-10 flex flex-col items-center bg-black text-white">
+      <div class="w-1/3 space-y-2 py-4">
+        <h3 class="text-lg font-bold md:text-xl">コーポレート</h3>
+        <div>
+          <a href="#" class="text-sm font-bold hover:underline md:text-base"
+            >お問い合わせ</a
+          >
+        </div>
+      </div>
+
+      <footer class="p-3 text-center">
+        <p>© 2024 Art-SA2</p>
+      </footer>
+    </div>
 
     <!-- 以下は、開発用コード -->
     <!-- メインのリポジトリでは、使用しないでください。 -->
