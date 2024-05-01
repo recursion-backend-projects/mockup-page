@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
 
-    <title>お問い合わせ</title>
+    <title>アカウント情報</title>
   </head>
   <body class="flex h-screen flex-col bg-gray-100">
     <header class="antialiased">
@@ -440,59 +440,91 @@
     </header>
 
     <main class="flex-grow">
-      <!-- お問い合わせ -->
+      <!-- アカウント情報 -->
       <div class="mb-10 flex flex-col items-center pt-10 antialiased">
         <div class="flex w-full flex-col py-4 md:w-1/2 lg:w-1/3">
           <div
             class="container items-center justify-center space-y-4 px-6 md:pl-0"
           >
-            <h1 class="text-center text-2xl font-bold md:text-4xl">
-              お問い合わせ
+            <h1
+              class="text-center text-2xl font-bold md:text-start md:text-4xl"
+            >
+              アカウント情報
             </h1>
-            <p class="text-center text-base text-gray-500 md:text-lg">
-              お問い合わせフォームに必要事項を記入してください。<br />内容を確認後、メールアドレスへ担当者よりご連絡させて頂きます。
+            <p class="text-base text-gray-500 md:text-lg">
+              アカウント情報は、商品ご購入時の自動入力に利用されます
             </p>
 
-            <!-- お問い合わせフォーム -->
-            <form
-              action="#"
-              method="post"
+            <div
               class="space-y-4 rounded-xl border border-gray-200 bg-white p-4 shadow-xl"
             >
-              <div>
-                <label for="name">氏名</label>
-                <input
-                  type="text"
-                  name="name"
-                  class="w-full rounded border border-gray-300 p-2"
-                />
+              <div class="flex justify-between">
+                <h2 class="text-xl font-bold md:text-2xl">1. 基本情報</h2>
+                <a
+                  href="#"
+                  class="mr-2 text-sky-400 hover:text-orange-400 hover:underline"
+                >
+                  編集する
+                </a>
               </div>
               <div>
-                <label for="email">メールアドレス</label>
-                <input
-                  type="email"
-                  name="email"
-                  class="w-full rounded border border-gray-300 p-2"
-                />
-              </div>
-              <div>
-                <label for="contact-detail">お問い合わせ内容</label>
-                <textarea
-                  name="contact-detail"
-                  rows="4"
-                  class="w-full rounded border border-gray-300 p-2"
-                ></textarea>
+                <p>ユーザー名</p>
+                <p class="w-full rounded border border-gray-300 p-2">UserA</p>
               </div>
 
               <div>
-                <button
-                  type="submit"
-                  class="my-2 w-full rounded bg-yellow-400 py-2 hover:bg-yellow-500"
-                >
-                  送信する
-                </button>
+                <p>氏名</p>
+                <p class="w-full rounded border border-gray-300 p-2">
+                  FULL NAME
+                </p>
               </div>
-            </form>
+
+              <div>
+                <p>メールアドレス</p>
+                <p class="w-full rounded border border-gray-300 p-2">
+                  email@example.com
+                </p>
+              </div>
+
+              <div>
+                <p>電話番号</p>
+                <p class="w-full rounded border border-gray-300 p-2">
+                  123-4567-8901
+                </p>
+              </div>
+
+              <h2 class="text-xl font-bold md:text-2xl">2. お届け先</h2>
+              <p for="zip-code-front">郵便番号</p>
+              <div class="flex">
+                <p class="w-1/3 rounded border border-gray-300 p-2">123</p>
+                <p class="px-3 py-2">ー</p>
+                <p class="w-1/3 rounded border border-gray-300 p-2">4567</p>
+              </div>
+
+              <div>
+                <p class="ml-1 block text-lg text-gray-900">都道府県</p>
+                <p class="w-1/3 rounded border border-gray-300 p-2">北海道</p>
+              </div>
+
+              <div>
+                <p>住所(1行目)</p>
+                <p class="w-full rounded border border-gray-300 p-2">
+                  xx市oo町12-3
+                </p>
+              </div>
+
+              <div>
+                <p>住所(2行目)</p>
+                <p class="w-full rounded border border-gray-300 p-2">
+                  xxマンション123
+                </p>
+              </div>
+
+              <h2 class="text-xl font-bold md:text-2xl">3. お支払い方法</h2>
+              <p class="text-base text-gray-500 md:text-lg">
+                デモサイトのため、金銭のやり取りは発生しません。<br />商品ご購入時に、テスト用のカードデータをご用意致します。
+              </p>
+            </div>
           </div>
         </div>
       </div>
